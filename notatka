@@ -1,0 +1,23 @@
+/* ŚCIĄGA: width: 100% vs max-width
+  1. Kiedy używać RAZEM (Złoty Standard Responsywności):
+     - Formularze, Przyciski, Kontenery:
+       width: 100%;      -> Rozpycha element na telefonach (pełny ekran)
+       max-width: 400px; -> Hamuje element na monitorach (estetyczny wygląd)
+     - Obrazy (np. logo): Aby skalowały się w dół, ale nie traciły jakości przez powiększanie.
+
+  2. Kiedy wystarczy samo MAX-WIDTH:
+     - Elementy blokowe (div, p, h1): One "w genach" mają 100% szerokości,
+       więc samo max-width wystarczy, by je ograniczyć.
+
+  3. Kiedy UNIKAĆ tego połączenia (stosować stałe width):
+     - Małe ikony: Żeby uniknąć "pikselozy" przy nagłym rozciągnięciu.
+     - Linki i Span: Wymuszenie 100% zepsuje układ tekstu (wyrzuci link do nowej linii).
+
+
+  - width: 100% zwieksza.
+  - max-width ogranicza
+*/
+
+
+Max width - By ograniczać na telefonach i monitorach lub dostosowywać pod 100% witdh
+width 100% - By dopazywać przyciski i inne elementy do rodzica
