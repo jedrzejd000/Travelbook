@@ -1,52 +1,29 @@
 @use '@angular/material' as mat;
-
 // 1. Definicja motywu (przywraca ramki kart i cienie)
 $my-theme: mat.define-theme();
 
 html {
+  // Ładowanie stylów bazowych
+  @include mat.all-component-themes($my-theme);
   height: 100%;
   margin: 0;
   --primal: #13D420;
+  --secondary: white;
 
   /* Opcjonalnie przypisz ją od razu do systemu Material,
      żeby przyciski i ramki też wiedziały, co jest Twoim głównym kolorem */
-  --mat-sys-primary: var(--primal);
-  // Ładowanie stylów bazowych
-  @include mat.all-component-themes($my-theme);
+  --mat-sys-primary: var(--primal) !important;
+  --mat-sys-secondary: var(--secondary) !important;
 
-  // 2. ATOMOWE NADPISANIE KOLORÓW (Zabija fiolet, wymusza zieleń)
-  // Nadpisujemy główne tokeny, z których korzysta Material 3
-  //--mat-sys-primary: #13D420 !important;
-  //--mat-sys-primary-container: #13D420 !important;
-  //--mat-sys-on-primary-container: white !important;
-  //
-  //// Zmienne dla pól tekstowych (ramka, kursor, label)
-  //--mdc-outlined-text-field-focus-outline-color: #13D420 !important;
-  //--mdc-outlined-text-field-focus-label-text-color: #13D420 !important;
-  //--mdc-outlined-field-focus-outline-color: #13D420 !important;
-  //--mat-form-field-focus-input-caret-color: #13D420 !important;
 
   // Przywrócenie widoczności krawędzi kart (mat-card)
   --mat-sys-outline-variant: #e0e0e0 !important;
 
   --mat-form-field-outlined-focus-outline-color: #13D420 !important;
   --mat-form-field-outlined-focus-label-text-color: #13D420 !important;
-  //--mat-form-field-outlined-caret-color: #13D420 !important;
-
-
-  ///* Jeśli używasz pól typu 'filled' (z tłem), dodaj też te: */
-  //--mat-form-field-filled-focus-active-indicator-color: #13D420 !important;
-  //--mat-form-field-filled-focus-label-text-color: #13D420 !important;
-  //--mat-form-field-filled-caret-color: #13D420 !important;
 
   ///* DODATKOWO: Wymuszamy główny kolor systemu na zielony */
-  --mat-sys-primary: #13D420 !important;
 }
-//.mat-mdc-form-field.mat-focused .mdc-outlined-field__outline-start,
-//.mat-mdc-form-field.mat-focused .mdc-outlined-field__outline-end,
-//.mat-mdc-form-field.mat-focused .mdc-outlined-field__outline-notch {
-//  border-color: #13D420 !important;
-//}
 
 body {
   margin: 0;
@@ -56,20 +33,6 @@ body {
   color: var(--mat-sys-on-surface);
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-//// 3. Globalne wymuszenie zieleni dla każdego pola w stanie FOCUS
-//// To uderza bezpośrednio w fizyczne obramowanie narysowane przez MDC
-//.mat-mdc-form-field.mat-focused {
-//  .mdc-outlined-field__outline-start,
-//  .mdc-outlined-field__outline-end,
-//  .mdc-outlined-field__outline-notch {
-//    border-color: #13D420 !important;
-//    border-width: 2px !important;
-//  }
-//
-//  .mdc-floating-label {
-//    color: #13D420 !important;
-//  }
-//}
 
 // 4. Stylizacja przycisku
 .primaryButton {
@@ -98,44 +61,20 @@ app-root > * {
   padding: 10px;
 }
 
-///* 1. Celujemy w zmienne CSS na poziomie 'body', aby były dostępne wszędzie */
-//body {
-//  --mdc-outlined-field-focus-outline-color: #13D420 !important;
-//  --mdc-outlined-field-focus-label-text-color: #13D420 !important;
-//  --mat-form-field-focus-input-caret-color: #13D420 !important;
-//}
-//
-///* 2. Przebijamy się przez strukturę MDC - to jest najważniejsze */
-///* Selektor jest bardzo długi, aby był "silniejszy" niż domyślny fiolet Angulara */
-//html body .mat-mdc-form-field.mat-focused {
-//  /* Kolorowanie trzech części ramki */
-//  .mdc-outlined-field__outline-start,
-//  .mdc-outlined-field__outline-end,
-//  .mdc-outlined-field__outline-notch {
-//    border-color: #13D420 !important;
-//    border-width: 2px !important;
-//  }
-//
-//  /* Kolor napisu (label) */
-//  .mdc-floating-label {
-//    color: #13D420 !important;
-//  }
-//
-//  /* Kolor kursora */
-//  input {
-//    caret-color: #13D420 !important;
-//  }
-//}
-//
-///* 3. Naprawa dla "pływającego" labela wewnątrz notch'a */
-//html body .mat-mdc-form-field.mat-focused .mdc-floating-label.mdc-floating-label--float-above {
-//  color: #13D420 !important;
-//}
-
 .primaryContent {
   background-color: var(--mat-sys-primary);
   width: 100%;
   height: 100%;
   flex: fit-content;
   align-content: center;
+}
+
+.mat-toolbar.mat-primary {
+  background-color: #13D420 !important;
+  color: white !important;
+
+  // To zapewni, że ikony i tekst wewnątrz też będą białe
+  .mat-icon, span, button {
+    color: white !important;
+  }
 }

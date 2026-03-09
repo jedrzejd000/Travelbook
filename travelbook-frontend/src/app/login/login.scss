@@ -1,59 +1,64 @@
+// 1.login-form
 .login-form {
-  /* 1. Responsywność (Złoty duet) */
-  width: 100%;       /* Bądź tak szeroki jak ekran... */
-  max-width: 400px;  /* ...ale nie przekraczaj 400px na komputerze */
-
-  /* 2. Centrowanie (Magia Flexboxa) */
-  margin: auto;      /* Jeśli rodzic ma display: flex, to ustawi Cię idealnie na środku */
-
-  /* 3. Układ wewnętrzny (Żeby inputy były jeden pod drugim) */
-  display: flex;
-  flex-direction: column; /* Układa dzieci (email, hasło, button) w pionie */
-  gap: 15px;             /* Robi równe odstępy między polami bez używania margin-bottom */
-
-  /* 4. Estetyka (Opcjonalnie) */
-  padding: 20px;
-  box-sizing: border-box; /* Bardzo ważne! Padding nie rozszerzy Ci formularza ponad 400px */
-
-  /* --- TUTAJ DODAJEMY BORDER --- */
-  border: 2px solid var(--primal) !important; /* Grubość, styl (solidny) i Twój kolor */
-  border-radius: 12px;       /* Zaokrąglenie rogów, żeby pasowało do mat-card */
-
-  background-color: white;
-}
-
-/* 1. Ustawiamy układ pionowy dla zawartości karty */
-mat-card-content {
-  display: flex;
-  flex-direction: column; /* Układaj elementy jeden pod drugim */
-  gap: 5px;             /* Dodaj równe odstępy między polami */
-  padding-top: 10px !important; /* Odstęp od nagłówka/dividera */
-}
-
-/* 2. Rozciągamy pola na całą szerokość karty */
-mat-form-field {
   width: 100%;
+  max-width: 400px;
+  margin: 60px auto;
+  border: 2px solid #13D420;
+  border-radius: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-/* 3. Wyrównanie przycisku do prawej (jeśli chcesz) */
-mat-card-actions {
+.login-form mat-card-content {
   display: flex;
-  justify-content: center; /* Przesuwa przycisk na prawą stronę */
-  padding: 16px;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px 16px;
 }
 
-.title-row {
+.login-form mat-form-field {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.login-form mat-card-actions {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 15px;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 16px 16px 16px;
 }
 
-.title-icon {
-  width: 150px;
-  height: 100px;
-  display: inline-block;
-  /* Jeśli obrazek ma białe tło, a chcesz żeby zniknęło,
-     możesz dodać border-radius dla estetyki */
-  border-radius: 4px;
+.login-form-icon {
+  display: flex;
+  margin: auto;
+  padding-top: 20px;
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+// 2.forgot-password
+.forgot-password-link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.forgot-password-link a {
+  font-size: 0.85rem;
+  color: #65676b;
+  text-decoration: none;
+}
+
+.forgot-password-link a:hover {
+  text-decoration: underline;
+}
+
+// 3.main-background
+.main-background {
+  display: flex;
+  height: calc(100vh - 64px);
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+  url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2070');
+  background-size: cover;
+  background-position: center;
 }

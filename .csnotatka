@@ -1,0 +1,77 @@
+DISPLAY
+
+1. display: inline (Liniowy)
+Elementy oznaczone tym Układają się obok siebie w jednej linii (jak słowa w zdaniu).
+Jeden element dokłada się do ostatnie górnej lini
+Wymiary: Całkowicie ignoruje width i height. Rozmiar zależy tylko od treści.
+Pęka na fragmenty.
+
+2. display: block (Blokowy)
+Jak płyną: Zawsze zaczyna się od nowej linii i zajmuje całą dostępną szerokość rodzica.
+Wymiary: W pełni respektuje width i height.
+Pękanie: Nigdy nie pęka w połowie – jest sztywną "cegłą".
+
+3. display: inline-block (Hybryda)
+To samo co inline ale nie pęka
+Układają się obok siebie w jednej linii (dopóki starczy miejsca).
+Wymiary: W przeciwieństwie do inline, respektuje ustawienia width i height.
+Pękanie: Jeśli nie ma miejsca, cały element przeskakuje do nowej linii (nie rozcina się).
+
+
+
+################
+Flexbox
+
+.flex-container {
+  display: flex;
+  justify-content: end; /* obsługuje główna oś*/
+  align-items: start;          /* obsługuje drugą Oś */
+  height: 200px;
+  background-color: #f0f0f0;
+  flex-direction: row; // kierunek
+  flex-wrap: wrap; //układa niezmieszczone leemnty podspodem
+}
+
+
+Te trzy właściwości często zapisuje się w skrócie jako flex: [grow] [shrink] [basis].
+
+flex-grow: Określa, ile wolnego miejsca ma zająć dany element. Jeśli jeden element ma flex-grow: 2, a pozostałe 1,
+to ten pierwszy zajmie dwa razy więcej pozostałej przestrzeni.
+
+flex-shrink: Decyduje, jak bardzo element ma się "skurczyć", gdy zabraknie miejsca.
+
+flex-basis: Definiuje domyślny rozmiar elementu, zanim zostanie rozdzielona pozostała przestrzeń
+(taki "punkt wyjścia" zamiast width).
+
+Jesli elemtny mają określoną width to z tego co zostało oblcizane są jednostki.
+
+Suma podstawowa: Najpierw rezerwujemy miejsce z flex-basis. $200px + 200px = 400px$.
+Wolne miejsce: Zostaje nam $1000px - 400px = 600px$ "ekstra" przestrzeni.
+Podział łupu: Teraz patrzymy na flex-grow. Mamy łącznie 3 jednostki wzrostu ($1 + 2 = 3$).
+Jedna jednostka to $600px / 3 = 200px$.
+Wynik końcowy:
+Element A dostaje 1 jednostkę: $200px (baza) + 200px (extra) =$ 400px.
+Element B dostaje 2 jednostki: $200px (baza) + 400px (extra) =$ 600px."
+
+.container {
+  display: flex;
+  gap: 20px; /* Robi idealne 20px odstępu między elementami, ale nie przy krawędziach rodzica! */
+}
+
+To "wyjątek od reguły". Jeśli rodzic mówi wszystkim:
+"Wszystkie dzieci do środka!" (align-items: center), Ty możesz powiedzieć jednemu konkretnemu elementowi: "A Ty stój na górze!".
+
+.special-item {
+  align-self: flex-start;
+}
+
+
+
+########################################
+PADDIN A MARGIN - margin działa maksymalmnie na zewnatrz, ponad ramkę, padding wewnatrz, w ramce, wypycha ją
+
+GAP: Odstęp pojawia się tylko pomiędzy elementami. Pierwszy i ostatni element idealnie dotykają krawędzi kontenera.
+
+BOX SIZING - CONTENT-BOX - Ustawia szerokości dodatkowo wlicza paddin i border. Całkowita szerokość = width + padding + border
+border-box - Ustawia szerokosc już razem (zaleacen).Całkowita szerokość = width (padding i border są już wliczone).
+

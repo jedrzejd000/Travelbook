@@ -1,1 +1,63 @@
-<p>home works!</p>
+<mat-drawer-container class="main-container" autosize>
+  <mat-drawer mode="side" opened class="side-drawer left">
+    <mat-nav-list class="sidebar-menu">
+      <a mat-list-item href="#">
+        <mat-icon matListItemIcon class="profile-icon">account_circle</mat-icon>
+        <span matListItemTitle>Twój profil</span>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon matListItemIcon class="timeline-icon">web</mat-icon>
+        <span matListItemTitle>Twoja oś</span>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon matListItemIcon class="global-icon">public</mat-icon>
+        <span matListItemTitle>Oś globalna</span>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon matListItemIcon class="explore-icon">explore</mat-icon>
+        <span matListItemTitle>Oś znajomych</span>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon matListItemIcon class="friends-icon">people</mat-icon>
+        <span matListItemTitle>Znajomi</span>
+      </a>
+      <a mat-list-item href="#">
+        <mat-icon matListItemIcon class="settings-icon">settings</mat-icon>
+        <span matListItemTitle>Ustawienia</span>
+      </a>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer mode="side" opened position="end" class="side-drawer right">
+    <div class="drawer-inner-wrapper">
+      <div class="side-content">
+        <h4>Kontakty</h4>
+        <div class="search-container-custom">
+          <mat-icon class="search-icon-custom">search</mat-icon>
+          <input
+            type="text"
+            class="search-input-custom"
+            placeholder="Wyszukaj czat"
+            autocomplete="off">
+        </div>
+      </div>
+      <mat-nav-list class="sidebar-menu">
+        <a mat-list-item href="#">
+          <mat-icon matListItemIcon>account_circle</mat-icon>
+          <span matListItemTitle>Znajomy 1</span>
+        </a>
+      </mat-nav-list>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content class="main-content">
+    <div class="feed">
+      <mat-card class="post-card">
+        <mat-card-header>
+          <mat-card-title>Witaj w TraveloBook!</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Tutaj pojawi się Twój feed podróżniczy.</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

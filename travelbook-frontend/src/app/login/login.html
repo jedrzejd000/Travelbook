@@ -1,36 +1,28 @@
-
-  <!--  <mat-card class="login-form" [formGroup] = "loginForm">-->
+<div class="main-background">
   <mat-card class="login-form">
     <mat-card-header>
-      <div class="title-row">
-        <img src="logo6.png" class="title-icon" alt="Logo">
-        <mat-card-title>Witaj na TravelBook!</mat-card-title>
-      </div>
+      <img src="logo6.png" class="login-form-icon" alt="Logo">
     </mat-card-header>
 
     <mat-card-content>
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
-        <!--        <input matInput formControlName="username">-->
-        <input matInput type="email" formControlName="username">
+        <input matInput type="email">
       </mat-form-field>
+
       <mat-form-field appearance="outline">
         <mat-label>Hasło</mat-label>
-        <!--        <input matInput type="password" formControlName="password">-->
         <input matInput type="password">
       </mat-form-field>
+
       <mat-card-actions>
-        <!--      <button (click) = "login()" mat-raised-button color="primary">Login</button>-->
-        <button mat-raised-button class="primaryButton" color="primary">Zaloguj</button>
+        <button mat-raised-button class="primaryButton">Zaloguj</button>
+        <button mat-raised-button class="primaryButton">Utwórz nowe konto</button>
       </mat-card-actions>
-      <mat-card-actions>
-        <!--      <button (click) = "login()" mat-raised-button color="primary">Login</button>-->
-        <button mat-raised-button class="primaryButton" color="primary">Utwórz nowe konto</button>
-      </mat-card-actions>
-      <div style="padding: 10px">
-        <a href="">Nie pamiętasz hasła? Kliknij tutaj</a>
+
+      <div class="forgot-password-link">
+        <a href="#">Nie pamiętasz hasła? Kliknij tutaj</a>
       </div>
     </mat-card-content>
   </mat-card>
-
-
+</div>

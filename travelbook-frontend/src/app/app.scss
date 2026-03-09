@@ -1,0 +1,80 @@
+mat-toolbar {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 64px;
+  padding: 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1) !important;
+  z-index: 1000;
+  position: relative;
+}
+
+// 1.header-section
+.header-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.header-section.left {
+  justify-content: flex-start;
+  margin: 5px;
+}
+
+.header-section.left img {
+  height: 54px;
+  border-radius: 10px;
+  margin-right: 12px;
+}
+
+.header-section.center {
+  justify-content: center;
+}
+
+.header-section.right {
+  justify-content: flex-end;
+  padding-right: 50px;
+}
+
+.header-section mat-icon {
+  font-size: 20px !important;
+  height: 20px !important;
+  width: 20px !important;
+  margin-right: 8px !important;
+  color: #5f6368 !important;
+}
+/////////////////////////
+
+
+.secondaryButton {
+  background-color: var(--secondary) !important;
+  font-size: 1rem;
+}
+
+.secondaryButton ::ng-deep .mdc-button__label {
+  color: var(--primal) !important;
+}
+
+
+// 2.search-container-custom
+.search-container {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  background-color: #eef1f6;
+  border-radius: 20px;
+  padding: 5px 15px;
+  box-sizing: border-box;
+}
+
+.search-container input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  color: #3c4043;
+}
+///////////////
+

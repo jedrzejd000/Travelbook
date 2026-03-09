@@ -1,3 +1,26 @@
-<app-login></app-login>
+<mat-toolbar color="primary">
+  <div class="header-section left">
+    <img src="logo5.png" alt="Logo">
+    <h1>Witaj na TravelBook</h1>
+  </div>
+
+  <div class="header-section center">
+    @if (isLoggedIn) {
+      <div class="search-container">
+        <mat-icon>search</mat-icon>
+        <input type="text" placeholder="Wyszukaj osoby" autocomplete="off">
+      </div>
+    }
+  </div>
+
+  <div class="header-section right">
+    @if (!isLoggedIn) {
+      <button mat-raised-button class="secondaryButton">Zaloguj się</button>
+    }
+  </div>
+</mat-toolbar>
+<app-home></app-home>
+
+
 
 

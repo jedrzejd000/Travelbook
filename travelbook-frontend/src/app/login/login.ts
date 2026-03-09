@@ -6,6 +6,7 @@ import {MatButton} from '@angular/material/button';
 import {MatChipTrailingIcon} from '@angular/material/chips';
 import {MatIcon} from '@angular/material/icon';
 import {NgOptimizedImage} from '@angular/common';
+import {MatToolbar} from '@angular/material/toolbar';
 @Component({
   selector: 'app-login',
   imports: [
@@ -18,6 +19,7 @@ import {NgOptimizedImage} from '@angular/common';
     MatChipTrailingIcon,
     MatIcon,
     NgOptimizedImage,
+    MatToolbar,
   ],
   standalone: true,
   templateUrl: './login.html',
