@@ -7,30 +7,22 @@ html {
   @include mat.all-component-themes($my-theme);
   height: 100%;
   margin: 0;
-  --primal: #13D420;
+  --primary: #13D420;
   --secondary: white;
 
-  /* Opcjonalnie przypisz ją od razu do systemu Material,
-     żeby przyciski i ramki też wiedziały, co jest Twoim głównym kolorem */
-  --mat-sys-primary: var(--primal) !important;
+  --mat-sys-primary: var(--primary) !important;
   --mat-sys-secondary: var(--secondary) !important;
 
-
-  // Przywrócenie widoczności krawędzi kart (mat-card)
   --mat-sys-outline-variant: #e0e0e0 !important;
 
   --mat-form-field-outlined-focus-outline-color: #13D420 !important;
   --mat-form-field-outlined-focus-label-text-color: #13D420 !important;
 
-  ///* DODATKOWO: Wymuszamy główny kolor systemu na zielony */
 }
 
 body {
   margin: 0;
   height: 100%;
-  color-scheme: light;
-  background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
@@ -39,42 +31,28 @@ body {
   width: 100%;
   max-width: 250px;
   height: 50px; // Poprawiłem wysokość na bardziej standardową
-  background-color: #13D420 !important;
-  color: white !important;
+  background-color: var(--primary) !important;
+  color:  var(--secondary) !important;
   font-size: 1.1rem;
 }
 
-// 5. Struktura aplikacji
-app-root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-app-root > * {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  padding: 10px;
-}
-
-.primaryContent {
-  background-color: var(--mat-sys-primary);
+.search-container {
   width: 100%;
-  height: 100%;
-  flex: fit-content;
-  align-content: center;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  background-color: #eef1f6;
+  border-radius: 20px;
+  padding: 5px 15px;
+  box-sizing: border-box;
 }
 
-.mat-toolbar.mat-primary {
-  background-color: #13D420 !important;
-  color: white !important;
-
-  // To zapewni, że ikony i tekst wewnątrz też będą białe
-  .mat-icon, span, button {
-    color: white !important;
-  }
+.search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  padding-left: 10px;
+  color: #3c4043;
 }

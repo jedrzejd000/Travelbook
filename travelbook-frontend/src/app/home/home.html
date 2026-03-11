@@ -1,4 +1,4 @@
-<mat-drawer-container class="main-container" autosize>
+<mat-drawer-container class="home-container">
   <mat-drawer mode="side" opened class="side-drawer left">
     <mat-nav-list class="sidebar-menu">
       <a mat-list-item href="#">
@@ -28,14 +28,13 @@
     </mat-nav-list>
   </mat-drawer>
   <mat-drawer mode="side" opened position="end" class="side-drawer right">
-    <div class="drawer-inner-wrapper">
-      <div class="side-content">
+      <div class="chat-bar">
         <h4>Kontakty</h4>
-        <div class="search-container-custom">
-          <mat-icon class="search-icon-custom">search</mat-icon>
+        <div class="search-container">
+          <mat-icon>search</mat-icon>
           <input
             type="text"
-            class="search-input-custom"
+            class="search-input"
             placeholder="Wyszukaj czat"
             autocomplete="off">
         </div>
@@ -46,9 +45,8 @@
           <span matListItemTitle>Znajomy 1</span>
         </a>
       </mat-nav-list>
-    </div>
   </mat-drawer>
-  <mat-drawer-content class="main-content">
+  <mat-drawer-content class="home-main-content">
     <div class="feed">
       <mat-card class="post-card">
         <mat-card-header>
