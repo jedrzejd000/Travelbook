@@ -7,6 +7,7 @@ import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from '@angular/mat
 import {MatFormField, MatLabel} from '@angular/material/input';
 import {MatButtonToggle} from '@angular/material/button-toggle';
 import {MatButton} from '@angular/material/button';
+import { Friends } from "../friends/friends";
 
 @Component({
   selector: 'app-home',
@@ -25,8 +26,9 @@ import {MatButton} from '@angular/material/button';
     MatLabel,
     MatButtonToggle,
     MatButton,
-    MatListItem
-  ],
+    MatListItem,
+    Friends
+],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

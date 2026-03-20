@@ -1,0 +1,81 @@
+<div class="friends-container">
+  <div class="header-wrapper">
+      <div class="toggle-container">
+        <mat-button-toggle-group
+          #group="matButtonToggleGroup"
+          value="friends"
+          hideSingleSelectionIndicator
+        >
+          <mat-button-toggle value="friends">
+            <span>Twoi znajomi</span>
+          </mat-button-toggle>
+          <mat-button-toggle value="invites">
+            <span>Zaproszenia</span>
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+
+      <div class="search-bar-container" [class.hidden]="group.value !== 'friends'">
+        <div class="search-box">
+          <mat-icon>search</mat-icon>
+          <input class="search-input" type="text" placeholder="Wyszukaj w znajomych" />
+        </div>
+    </div>
+  </div>
+
+  @if (group.value === 'friends') {
+    <div class="scrollable-area">
+      <mat-nav-list>
+        @for (friend of friends; track friend.name) {
+          <mat-card class="friend-item-card">
+            <mat-card-content class="friend-card-layout">
+              <mat-icon class="profile-icon">account_circle</mat-icon>
+              <span class="friend-name">{{ friend.name }}</span>
+              <div class="action-icons">
+                <mat-icon>search</mat-icon>
+                <mat-icon>chat</mat-icon>
+                <mat-icon>delete</mat-icon>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        } @empty {
+          <div class="empty-state">Nie znaleziono znajomych</div>
+        }
+      </mat-nav-list>
+    </div>
+  }@else {
+  <div class="scrollable-wrapper">
+    
+    <h3>Zaproszenia do Ciebie</h3>
+    <div class="friends-grid-invites">
+      @for (friend of friends; track friend.name) {
+        <mat-card class="friend-item-card-invites">
+          <mat-card-content class="friend-card-layout-invites">
+            <mat-icon class="profile-icon2">account_circle</mat-icon>
+            <span class="friend-name">{{ friend.name }}</span>
+            <div class="action-icons">
+               <mat-icon class="accept-icon">check_circle</mat-icon>
+               <mat-icon class="reject-icon">cancel</mat-icon>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+    <h3>Zaproszenia od Ciebie</h3>
+    <div class="friends-grid-invites">
+      @for (friend of friends; track friend.name) {
+      <mat-card class="friend-item-card-invites">
+          <mat-card-content class="friend-card-layout-invites">
+            <mat-icon class="profile-icon2">account_circle</mat-icon>
+            <span class="friend-name">{{ friend.name }}</span>
+            <div class="action-icons">
+               <mat-icon class="reject-icon">cancel</mat-icon>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+
+  </div>
+}
+</div>

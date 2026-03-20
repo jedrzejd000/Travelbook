@@ -7,7 +7,7 @@ html {
   @include mat.all-component-themes($my-theme);
   height: 100%;
   margin: 0;
-  --primary: #13D420;
+  --primary: #24B529;
   --secondary: white;
 
   --mat-sys-primary: var(--primary) !important;
@@ -15,8 +15,8 @@ html {
 
   --mat-sys-outline-variant: #e0e0e0 !important;
 
-  --mat-form-field-outlined-focus-outline-color: #13D420 !important;
-  --mat-form-field-outlined-focus-label-text-color: #13D420 !important;
+  --mat-form-field-outlined-focus-outline-color: var(--primary) !important;
+  --mat-form-field-outlined-focus-label-text-color: var(--primary) !important;
 
 }
 
@@ -45,6 +45,7 @@ body {
   border-radius: 20px;
   padding: 5px 15px;
   box-sizing: border-box;
+  border: 1px solid var(--primary);
 }
 
 .search-input {
