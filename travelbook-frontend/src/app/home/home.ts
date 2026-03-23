@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import {MatToolbar} from '@angular/material/toolbar';
 import {MatIcon} from '@angular/material/icon';
 import {MatDrawer, MatDrawerContainer, MatDrawerContent} from '@angular/material/sidenav';
-import {MatListItem, MatNavList} from '@angular/material/list';
+import { MatListItem, MatNavList, MatListItemIcon, MatListItemTitle } from '@angular/material/list';
 import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from '@angular/material/card';
 import {MatFormField, MatLabel} from '@angular/material/input';
 import {MatButtonToggle} from '@angular/material/button-toggle';
 import {MatButton} from '@angular/material/button';
 import { Friends } from "../friends/friends";
+import { RouterOutlet, RouterLinkWithHref, RouterLinkActive } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -27,7 +29,12 @@ import { Friends } from "../friends/friends";
     MatButtonToggle,
     MatButton,
     MatListItem,
-    Friends
+    Friends,
+    RouterOutlet,
+    RouterLinkWithHref,
+    RouterLinkActive,
+    MatListItemIcon,
+    MatListItemTitle
 ],
   templateUrl: './home.html',
   styleUrl: './home.scss',

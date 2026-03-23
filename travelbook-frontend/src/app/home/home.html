@@ -2,22 +2,28 @@
   <mat-drawer mode="side" opened class="side-drawer left">
     <mat-nav-list class="sidebar-menu">
       <a mat-list-item href="#">
-        <mat-icon matListItemIcon class="profile-icon">account_circle</mat-icon>
+        <mat-icon
+          matListItemIcon
+          class="profile-icon"
+          routerLink="/profile"
+          routerLinkActive="active-class"
+          >account_circle</mat-icon
+        >
         <span matListItemTitle>Twój profil</span>
       </a>
       <a mat-list-item href="#">
         <mat-icon matListItemIcon class="timeline-icon">web</mat-icon>
         <span matListItemTitle>Twoja oś</span>
       </a>
-      <a mat-list-item href="#">
+      <a mat-list-item>
         <mat-icon matListItemIcon class="global-icon">public</mat-icon>
         <span matListItemTitle>Oś globalna</span>
       </a>
-      <a mat-list-item href="#">
+      <a mat-list-item>
         <mat-icon matListItemIcon class="explore-icon">explore</mat-icon>
         <span matListItemTitle>Oś znajomych</span>
       </a>
-      <a mat-list-item href="#">
+      <a mat-list-item routerLink="/friends" routerLinkActive="active-class">
         <mat-icon matListItemIcon class="friends-icon">people</mat-icon>
         <span matListItemTitle>Znajomi</span>
       </a>
@@ -28,26 +34,23 @@
     </mat-nav-list>
   </mat-drawer>
   <mat-drawer mode="side" opened position="end" class="side-drawer right">
-      <div class="chat-bar">
-        <h4>Kontakty</h4>
-        <div class="search-container">
-          <mat-icon>search</mat-icon>
-          <input
-            type="text"
-            class="search-input"
-            placeholder="Wyszukaj czat"
-            autocomplete="off">
-        </div>
+    <div class="chat-bar">
+      <h4>Kontakty</h4>
+      <div class="search-container">
+        <mat-icon>search</mat-icon>
+        <input type="text" class="search-input" placeholder="Wyszukaj czat" autocomplete="off" />
       </div>
-      <mat-nav-list class="sidebar-menu">
-        <a mat-list-item href="#">
-          <mat-icon matListItemIcon>account_circle</mat-icon>
-          <span matListItemTitle>Znajomy 1</span>
-        </a>
-      </mat-nav-list>
+    </div>
+    <mat-nav-list class="sidebar-menu">
+      <a mat-list-item href="#">
+        <mat-icon matListItemIcon>account_circle</mat-icon>
+        <span matListItemTitle>Znajomy 1</span>
+      </a>
+    </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content>
-    <app-friends></app-friends>
+    <router-outlet></router-outlet>
+
     <!-- <div class="feed">
       <mat-card class="post-card">
         <mat-card-header>

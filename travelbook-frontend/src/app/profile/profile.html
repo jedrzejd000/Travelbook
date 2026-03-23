@@ -1,0 +1,49 @@
+<div class="main-content">
+  <mat-card class="profile-card">
+    <mat-card-content class="profile-card-content">
+      <mat-icon class="profile-icon">account_circle</mat-icon>
+      <div class="info-content">
+        <h2>Jan kowalski</h2>
+        <span class="user-data">
+          <mat-icon>male</mat-icon>
+          męska
+        </span>
+
+        <span class="user-data">
+          <mat-icon>cake</mat-icon>
+          10.07.2000
+        </span>
+
+        <span class="user-data">
+          <mat-icon>location_city</mat-icon>
+          Poznań
+        </span>
+
+        <span class="user-data">
+          <mat-icon>public</mat-icon>
+          Polska
+        </span>
+      </div>
+    </mat-card-content>
+    <div>
+      <mat-card-actions>
+        <button mat-raised-button class="primaryButton">Oś Główna</button>
+        <button mat-raised-button class="primaryButton">Zdjęcia</button>
+        <button mat-raised-button class="primaryButton">Posty</button>
+        <button mat-raised-button class="primaryButton">Edytuj Profil</button>
+      </mat-card-actions>
+    </div>
+  </mat-card>
+   <mat-card>
+    <mat-card-content>
+      <div class="map-container"
+     leaflet 
+     [leafletOptions]="options"
+     (leafletMapReady)="onMapReady($event)"
+     >
+</div>
+    </mat-card-content>
+   </mat-card>
+
+
+</div>
